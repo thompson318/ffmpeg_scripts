@@ -8,7 +8,7 @@ suffix=${input_name##*.}
 filename=${input_name%%.*}
 
 st=$(echo $starttime | tr -d :)
-dur=$(echo $starttime | tr -d :)
-fileout=$filename$st$dur.$suffix
+dur=$(echo $duration | tr -d :)
+fileout=$filename$st$dur.avi
 
-ffmpeg -ss $starttime  -i $input_name -t $duration -acodec copy -vcodec copy $fileout
+ffmpeg -ss $starttime  -i $input_name -t $duration -acodec aac -vcodec h264 $fileout

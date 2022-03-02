@@ -23,4 +23,4 @@ fileout=$filename$outwidth$outheight$x_offset$y_offset.avi
 
 echo $#
 
-ffmpeg -i $input_name -filter:v "crop=$outwidth:$outheight:$x_offset:$y_offset" -an -vcodec h264 $fileout
+ffmpeg -i $input_name -filter:v "crop=$outwidth:$outheight:$x_offset:$y_offset" -acodec aac -vcodec h264 $fileout

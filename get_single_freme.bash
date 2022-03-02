@@ -7,6 +7,6 @@ suffix=${input_name##*.}
 filename=${input_name%%.*}
 
 st=$(echo $starttime | tr -d :)
-fileout=$filename$st.jpg
+fileout=$filename$st%4d.jpg
 
-ffmpeg -ss $starttime  -i $input_name -vframes 1 -q:v 1 $fileout
+ffmpeg -ss $starttime  -i $input_name -vframes 30 -q:v 1 frames/$fileout
